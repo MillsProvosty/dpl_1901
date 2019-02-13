@@ -1,7 +1,7 @@
 require './test/test_helper'
 require "./lib/author"
 require "./lib/book"
-require 'pry'
+
 
 class AuthorTest < Minitest::Test
 
@@ -31,11 +31,11 @@ class AuthorTest < Minitest::Test
 
   def test_add_book_creates_new_book_object
     @nk_jemisin = Author.new({first_name: "N.K.", last_name: "Jemisin"})
-    @book_1 = Book.new({author_first_name: "N.K.", author_last_name: "Jemisin", title: "The Fifth Season", publication_date: "November 3, 2015"})
+    @book_1 = Book.new({author_first_name: "N.K.", author_last_name: "Jemisin", publication_date: "2015", title: "The Fifth Season"})
 
 
     assert_equal [@book_1], @nk_jemisin.add_book("The Fifth Season", "November 3, 2015")
-    
+
     assert_equal [@book_1], @nk_jemisin.books
   end
 
